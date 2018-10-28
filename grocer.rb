@@ -86,4 +86,5 @@ def checkout(cart, coupons)
     return total
   else
     return total*0.9
+  end
 end
