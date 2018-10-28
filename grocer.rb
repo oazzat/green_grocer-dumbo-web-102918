@@ -20,15 +20,15 @@ def apply_coupons(cart, coupons)
   hash = cart
   counter = 0
   
-  while counter < coupons.length 
+  while counter < coupons.length
   item = coupons[counter][:item]
   
-    if cart.include?(coupons[counter][:item]) && !hash.key?("#{item} W/COUPON")
+    if cart.include?(coupons[counter][:item]) && !hash.key?("#{item} W/COUPON") && hash[item][:count]>= coupons[counter][:num]
         hash["#{item} W/COUPON"] = {price: coupons[counter][:cost],clearance: cart[item][:clearance], count: 0}
       hash["#{item} W/COUPON"][:count] +=1
       hash[item][:count] -= coupons[counter][:num]
       
-    elsif hash.key?("#{item} W/COUPON")
+    elsif hash.key?("#{item} W/COUPON") && hash[item][:count]>= coupons[counter][:num]
     hash["#{item} W/COUPON"][:count] +=1
     hash[item][:count] -= coupons[counter][:num]
     end
