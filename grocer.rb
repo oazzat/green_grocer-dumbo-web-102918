@@ -62,7 +62,7 @@ def checkout(cart, coupons)
   cart.each do |item, value|
     coupons.each do |coupon|
       binding.pry
-      if coupon[:item] == item && coupon[:num]<= cart[:count]
+      if coupon[:item] == item && coupon[:num]<= cart[item][:count]
         apply_coupons(cart,coupons)
       end
     end
