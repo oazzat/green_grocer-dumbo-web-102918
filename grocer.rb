@@ -66,6 +66,7 @@ def checkout(cart, coupons)
   puts cart
   apply_coupons(cart,coupons)
   cart = apply_clearance(cart)
+  puts cart
 #  cart.each do |item, value|
 #    coupons.each do |coupon|
 #  
