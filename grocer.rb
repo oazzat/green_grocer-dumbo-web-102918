@@ -44,7 +44,7 @@ def apply_clearance(cart)
       val[:price] = (val[:price] * 0.8).round(2)
     end
   end 
-  puts cart
+  #puts cart
   cart
 end
 
@@ -61,12 +61,6 @@ def checkout(cart, coupons)
   
   else
   cart = consolidate_cart(cart)
-  cart.each do |key,val|
-      total += val[:price]
-      puts val
-      puts "price: #{val[:price]}"
-      puts "new total: #{total}" 
-  end
   apply_coupons(cart,coupons)
   cart = apply_clearance(cart)
 #  cart.each do |item, value|
@@ -82,10 +76,10 @@ def checkout(cart, coupons)
   
   
   cart.each do |key,val|
-      total += val[:price]
-      puts val
-      puts "price: #{val[:price]}"
-      puts "new total: #{total}" 
+      total += val[:price] * val[:count]
+      #puts val
+      #puts "price: #{val[:price]}"
+      #puts "new total: #{total}" 
   end
   
   return total
