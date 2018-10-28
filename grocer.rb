@@ -54,12 +54,13 @@ def checkout(cart, coupons)
     cart = consolidate_cart(cart)
     
     apply_coupons(cart,coupons)
-    #apply_clearance(cart)
+    apply_clearance(cart)
     
   
   else
   cart = consolidate_cart(cart)
   apply_coupons(cart,coupons)
+  apply_clearance(cart)
 #  cart.each do |item, value|
 #    coupons.each do |coupon|
 #  
@@ -71,7 +72,7 @@ def checkout(cart, coupons)
 #  end
   end
   
-  apply_clearance(cart)
+  
   cart.each do |key,val|
       total += val[:price]
       puts val[:price]
