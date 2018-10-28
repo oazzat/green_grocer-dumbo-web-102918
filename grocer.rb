@@ -50,6 +50,7 @@ end
 def checkout(cart, coupons)
   total = 0.0
   
+  
   if cart.length == 1
     cart = consolidate_cart(cart)
     
@@ -59,6 +60,12 @@ def checkout(cart, coupons)
   
   else
   cart = consolidate_cart(cart)
+  cart.each do |key,val|
+      total += val[:price]
+      puts val
+      puts "price: #{val[:price]}"
+      puts "new total: #{total}" 
+  end
   apply_coupons(cart,coupons)
   cart = apply_clearance(cart)
 #  cart.each do |item, value|
