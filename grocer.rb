@@ -82,5 +82,6 @@ def checkout(cart, coupons)
       #puts "new total: #{total}" 
   end
   
+  if total > 100
   return total
 end
