@@ -60,15 +60,15 @@ def checkout(cart, coupons)
   else
   cart = consolidate_cart(cart)
   apply_coupons(cart,coupons)
-  cart.each do |item, value|
-    coupons.each do |coupon|
-  
-      if coupon[:item] == item && coupon[:num]<= cart[item][:count]
-        #binding.pry
-        #apply_coupons(cart,coupons)
-      end
-    end
-  end
+#  cart.each do |item, value|
+#    coupons.each do |coupon|
+#  
+#      if coupon[:item] == item && coupon[:num]<= cart[item][:count]
+#        #binding.pry
+#        #apply_coupons(cart,coupons)
+#      end
+#    end
+#  end
   end
   
   apply_clearance(cart)
