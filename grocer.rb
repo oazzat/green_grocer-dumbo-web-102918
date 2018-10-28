@@ -58,6 +58,7 @@ def checkout(cart, coupons)
     
   
   else
+  cart = consolidate_cart(cart)
   cart.each do |item, value|
     coupons.each do |coupon|
       if coupon[:item] == item && coupon[:num]<= cart[:count]
