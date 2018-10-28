@@ -59,7 +59,7 @@ def checkout(cart, coupons)
   
   else
   cart = consolidate_cart(cart)
-  apply_clearance(cart,coupons)
+  apply_coupons(cart,coupons)
   cart.each do |item, value|
     coupons.each do |coupon|
   
