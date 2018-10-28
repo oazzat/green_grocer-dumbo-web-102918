@@ -75,7 +75,8 @@ def checkout(cart, coupons)
   
   cart.each do |key,val|
       total += val[:price]
-      puts val[:price]
+      puts "price: #{val[:price]}"
+      puts "new total: #{total}" 
   end
   
   return total
